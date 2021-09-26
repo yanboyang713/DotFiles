@@ -17,18 +17,6 @@ LN = ln -vsf
 SLN = sudo ln -vsf
 LNDIR = ln -vs
 PKGINSTALL = sudo pacman --noconfirm -S
-PACMANFILENAME := $(addsuffix _BackupPacman.txt, $(date +'%Y-%m-%d %H:%M:%S'))
-AURFILENAME := $(addsuffix _BackupAur, $(date +'%Y-%m-%d %H:%M:%S'))
-
-#today=`date +%Y-%m-%d.%H:%M:%S`
-today=$(date +%Y-%m-%d)
-
-PACMANFILENAMEDIR := $(BASE)/ArchLinux/$(today)
-$(info PACMANFILENAMEDIR=$(PACMANFILENAMEDIR))
-
-#echo $(date)
-
-#echo $(PACMANFILENAMEDIR)
 
 help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) \
@@ -36,8 +24,8 @@ help:
 	| awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
 init: ## deploy dotfiles
-	$(LN) $(BASE)/zsh/.zshrc $(HOME)/.zshrc
-	$(LN) $(BASE)/zsh/zsh $(HOME)/.config/
+	$(BASE)/Scripts/zshSetUp
+	$(LN) $(PWD)/blog $(HOME)/blog
 execs:
 
 install: ## Install arch linux packages
@@ -49,4 +37,3 @@ aur: ## Install arch linux AUR packages using yay
 
 backup: ## Backup arch linux packages
 	$(BASE)/Scripts/backupPackage
-

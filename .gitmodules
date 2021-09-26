@@ -1,0 +1,3 @@
+[submodule "blog"]
+	path = blog
+	url = https://github.com/yanboyang713/yanboyang713.github.io.git

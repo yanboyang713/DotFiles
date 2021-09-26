@@ -1,0 +1,17 @@
+#!/bin/sh
+###############################################################
+## AUTHOR Name: Boyang Yan                                   ##
+## KEYWORDs: ZSH start-up setup                              ##
+## PURPOSE: Set-up System                                    ##
+## ENVIRONment: mac, Linux                                   ##
+## COMMENTs:                                                 ##
+## Last Modified Date: 26.09.2021                            ##
+###############################################################
+echo "Start Set-up ZSH"
+ln -vsf $PWD/zsh/.zshrc ~/.zshrc
+ln -vsf $PWD/zsh/zsh ~/.config/
+echo "Set ZSH as default shell"
+chsh -s /usr/bin/zsh
+
+
+
