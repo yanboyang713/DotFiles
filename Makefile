@@ -36,15 +36,16 @@ help:
 	| awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
 init: ## deploy dotfiles
-
+	$(LN) $(BASE)/zsh/.zshrc $(HOME)/.zshrc
+	$(LN) $(BASE)/zsh/zsh $(HOME)/.config/
 execs:
 
 install: ## Install arch linux packages
-	$(PKGINSTALL) --needed - < $(PWD)/ArchLinux/pacmanlist
+	$(PKGINSTALL) --needed - < $(BASE)/ArchLinux/pacmanlist
 	sudo pkgfile --update
 
 aur: ## Install arch linux AUR packages using yay
-	yay -S --needed - < $(PWD)/ArchLinux/aurlist
+	yay -S --needed - < $(BASE)/ArchLinux/aurlist
 
 backup: ## Backup arch linux packages
 	$(BASE)/Scripts/backupPackage
