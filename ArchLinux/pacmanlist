@@ -3,3 +3,4 @@ cmake
 docker
 docker-compose
 zsh
+emacs
