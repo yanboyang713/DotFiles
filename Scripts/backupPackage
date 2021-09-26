@@ -1,0 +1,29 @@
+#!/bin/sh
+###############################################################
+## AUTHOR Name: Boyang Yan                                   ##
+## KEYWORDs: System package list backup                      ##
+## PURPOSE: System package list backup with current time     ##
+## ENVIRONment: mac, Linux                                   ##
+## COMMENTs:                                                 ##
+## Last Modified Date: 26.09.2021                            ##
+###############################################################
+echo "Backup Packages called"
+
+backup () {
+    fileNameAUR="./ArchLinux/AURBackupedOn$(date +'%Y-%m-%d%H:%M:%S')"
+    fileNamePacman="./ArchLinux/PacmanBackupedOn$(date +'%Y-%m-%d%H:%M:%S')"
+
+    pacman -Qnq > $fileNamePacman
+    pacman -Qqem > $fileNameAUR
+
+    echo "Backup DONE"
+}
+if [ "$(ls -A ./ArchLinux 2>/dev/null)" ]; then
+    echo "ArchLinux DIR found, start backup"
+    backup
+else
+    echo "Create a new DIR and backup"
+    mkdir ./ArchLinux
+    backup
+fi;
+
