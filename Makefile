@@ -24,8 +24,7 @@ help:
 	| awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
 init: ## deploy dotfiles
-	$(BASE)/Scripts/zshSetUp
-	$(LN) $(PWD)/blog $(HOME)/blog
+	$(BASE)/Scripts/init
 execs:
 
 install: ## Install arch linux packages

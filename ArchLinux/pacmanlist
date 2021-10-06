@@ -3,4 +3,8 @@ cmake
 docker
 docker-compose
 zsh
+git
+ripgrep
+fd
 emacs
+

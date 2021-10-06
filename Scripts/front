@@ -1,0 +1,17 @@
+#!/bin/sh
+###############################################################
+## AUTHOR Name: Boyang Yan                                   ##
+## KEYWORDs: Nerd Fonts setup                                ##
+## PURPOSE: Set-up Nerd Fonts for Linux/Mac System           ##
+## ENVIRONment: mac, Linux                                   ##
+## COMMENTs:                                                 ##
+## Last Modified Date: 06.10.2021                            ##
+###############################################################
+echo "Start Set-up Nerd Fonts"
+if [[ "$OSTYPE" == "linux-gnu"* ]] || [[ "$OSTYPE" == "darwin"* ]]; then
+   git clone https://github.com/ryanoasis/nerd-fonts.git /tmp/nerdFonts
+   cd /tmp/nerdFonts
+   ./install.sh
+   rm -rf /tmp/nerdFonts
+fi
+echo "Set-up Nerd Font Done"

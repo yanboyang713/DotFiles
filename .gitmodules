@@ -1,3 +1,6 @@
 [submodule "blog"]
 	path = blog
 	url = https://github.com/yanboyang713/yanboyang713.github.io.git
+[submodule "doom"]
+	path = doom
+	url = https://github.com/yanboyang713/doom.git
