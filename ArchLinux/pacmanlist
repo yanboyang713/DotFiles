@@ -6,5 +6,7 @@ zsh
 git
 ripgrep
 fd
+shellcheck
 emacs
-
+npm
+weechat

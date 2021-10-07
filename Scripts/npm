@@ -1,0 +1,15 @@
+#!/bin/bash
+# Bash Menu Script
+#######################################################################
+## AUTHOR Name: Boyang Yan                                           ##
+## KEYWORDs: Install all of needed NPM package for this system       ##
+## PURPOSE: Install all of needed NPM package for this system        ##
+## ENVIRONment: mac, Linux                                           ##
+## COMMENTs:                                                         ##
+## Last Modified Date: 07.10.2021                                    ##
+#######################################################################
+
+echo "Let's we install all of required NPM's package for our system"
+
+## This package for Doom Emacs markdown-preview
+sudo npm install -g marked

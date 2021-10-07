@@ -55,12 +55,12 @@ alias m="git checkout master"
 alias s="git checkout stable"
 
 # Doom Emacs
-alias doomsync="$HOME/.config/emacs/bin/doom sync"
-alias doomupgrade="$HOME/.config/emacs/bin/doom upgrade"
-alias doomdoctor="$HOME/.config/emacs/bin/doom doctor"
-alias doompurge="$HOME/.config/emacs/bin/doom purge"
-alias doomclean="$HOME/.config/emacs/bin/doom clean"
-alias doombuild="$HOME/.config/emacs/bin/doom build"
+alias doomsync="$HOME/.emacs.d/bin/doom sync"
+alias doomupgrade="$HOME/.emacs.d/bin/doom upgrade"
+alias doomdoctor="$HOME/.emacs.d/bin/doom doctor"
+alias doompurge="$HOME/.emacs.d/bin/doom purge"
+alias doomclean="$HOME/.emacs.d/bin/doom clean"
+alias doombuild="$HOME/.emacs.d/bin/doom build"
 
 case "$(uname -s)" in
 
