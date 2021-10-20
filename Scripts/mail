@@ -1,0 +1,23 @@
+#!/bin/sh
+###############################################################
+## AUTHOR Name: Boyang Yan                                   ##
+## KEYWORDs: Nerd Fonts setup                                ##
+## PURPOSE: Set-up Nerd Fonts for Linux/Mac System           ##
+## ENVIRONment: mac, Linux                                   ##
+## COMMENTs:                                                 ##
+## Last Modified Date: 06.10.2021                            ##
+###############################################################
+echo "Start set-up mail with Doom Emacs"
+mkdir ~/MailDir
+mkdir ~/MailDir/gmail
+mkdir ~/MailDir/gmail/INBOX
+#mkdir ~/.config/mu4e
+
+ln -vsf $PWD/mail ~/.config/mu4e
+
+ln -vsf $PWD/mail/msmtp/msmtprc ~/.msmtprc
+
+chmod 600 ~/.msmtprc
+
+echo "Start set-up mail with Doom Emacs DONE"
+

@@ -12,7 +12,7 @@
 echo "Let's we start init set-up our system"
 
 PS3='Please enter your choice: '
-options=("All" "ZSH" "Doom Emacs" "Nerd Fonts" "Blog" "NPM" "Quit")
+options=("All" "ZSH" "Doom Emacs" "Nerd Fonts" "Blog" "NPM" "Mail" "Password" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -33,6 +33,12 @@ do
             ;;
         "All"|"NPM")
             sh $PWD/Scripts/npm
+            ;;
+        "All"|"Mail")
+            sh $PWD/Scripts/mail
+            ;;
+        "All"|"Password")
+            ln -vsf $PWD/password ~/.config/
             ;;
         "Quit")
             break

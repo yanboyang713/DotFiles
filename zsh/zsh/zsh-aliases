@@ -55,12 +55,15 @@ alias m="git checkout master"
 alias s="git checkout stable"
 
 # Doom Emacs
-alias doomsync="$HOME/.emacs.d/bin/doom sync"
-alias doomupgrade="$HOME/.emacs.d/bin/doom upgrade"
-alias doomdoctor="$HOME/.emacs.d/bin/doom doctor"
-alias doompurge="$HOME/.emacs.d/bin/doom purge"
-alias doomclean="$HOME/.emacs.d/bin/doom clean"
-alias doombuild="$HOME/.emacs.d/bin/doom build"
+alias doomS="$HOME/.emacs.d/bin/doom sync"
+alias doomU="$HOME/.emacs.d/bin/doom upgrade"
+alias doomD="$HOME/.emacs.d/bin/doom doctor"
+alias doomP="$HOME/.emacs.d/bin/doom purge"
+alias doomC="$HOME/.emacs.d/bin/doom clean"
+alias doomB="$HOME/.emacs.d/bin/doom build"
+
+# Blog
+alias blogD="sh $HOME/blog/deploy.sh"
 
 case "$(uname -s)" in
 

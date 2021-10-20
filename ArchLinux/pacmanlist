@@ -9,4 +9,5 @@ fd
 shellcheck
 emacs
 npm
-weechat
+libvterm
+figlet
