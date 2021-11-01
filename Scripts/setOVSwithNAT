@@ -1,0 +1,22 @@
+#!/bin/bash
+# Bash Menu Script
+#######################################################################
+## AUTHOR Name: Boyang Yan                                           ##
+## KEYWORDs: OVS bridge; NAT                                         ##
+## PURPOSE: Set-up OVS bridge with NAT                               ##
+## ENVIRONment: mac, Linux                                           ##
+## COMMENTs:                                                         ##
+## Last Modified Date: 1.11.2021                                     ##
+#######################################################################
+
+echo "Start-up OVS"
+sudo systemctl start ovsdb-server
+sudo systemctl start ovs-vswitchd
+
+echo "Add IP address to OVS bridge"
+sudo ip addr add 192.168.1.1/24 dev br0
+
+echo "Set-up NAT"
+sudo sh ./nat
+
+echo "DONE OVS Bridge with NAT"
