@@ -5,13 +5,15 @@
 ## KEYWORDs: OVS bridge; NAT                                         ##
 ## PURPOSE: Set-up OVS bridge with NAT                               ##
 ## ENVIRONment: mac, Linux                                           ##
-## COMMENTs:                                                         ##
+## COMMENTs: https://www.yanboyang.com/ubunturouter/                 ##
 ## Last Modified Date: 1.11.2021                                     ##
 #######################################################################
 
 echo "Start-up OVS"
 sudo systemctl start ovsdb-server
 sudo systemctl start ovs-vswitchd
+
+sleep 2
 
 echo "Add IP address to OVS bridge"
 sudo ip addr add 192.168.1.1/24 dev br0

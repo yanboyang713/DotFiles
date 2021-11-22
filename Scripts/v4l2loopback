@@ -1,0 +1,23 @@
+#!/bin/bash
+# Bash Menu Script
+#######################################################################
+## AUTHOR Name: Boyang Yan                                           ##
+## KEYWORDs: v4l2loopback                                            ##
+## PURPOSE: Compile and Install                                      ##
+## ENVIRONment: mac, Linux                                           ##
+## COMMENTs:                                                         ##
+## Last Modified Date: 1.11.2021                                     ##
+#######################################################################
+
+rm /tmp/v4l2loopback
+mkdir /tmp/v4l2loopback
+git clone https://github.com/umlaeute/v4l2loopback.git /tmp/v4l2loopback
+cd /tmp/v4l2loopback
+
+make
+sudo make install
+sudo depmod -a
+
+sudo modprobe v4l2loopback
+
+rm /tmp/v4l2loopback
