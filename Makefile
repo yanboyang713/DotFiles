@@ -26,7 +26,7 @@ help:
 init: ## deploy dotfiles
 	$(BASE)/Scripts/init
 execs:
-	$(LN) $(PWD)/Scripts/welcomemessage $(HOME)/.local/bin/welcomemessage
+	$(SLN) $(PWD)/Scripts/welcomemessage $(HOME)/.local/bin/welcomemessage
 install: ## Install arch linux packages
 	$(PKGINSTALL) --needed - < $(BASE)/ArchLinux/pacmanlist
 	sudo pkgfile --update

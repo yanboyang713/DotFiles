@@ -21,25 +21,25 @@ do
             ;;&
         "All"|"ZSH")
             sh $PWD/Scripts/zshSetUp
-            ;;
+            ;;&
         "All"|"Doom Emacs")
             sh $PWD/Scripts/doomEmacs
-            ;;
+            ;;&
         "All"|"Nerd Fonts")
             sh $PWD/Scripts/front
-            ;;
+            ;;&
         "All"|"Blog")
             ln -vsf $PWD/blog/ ~/blog/
-            ;;
+            ;;&
         "All"|"NPM")
             sh $PWD/Scripts/npm
-            ;;
+            ;;&
         "All"|"Mail")
             sh $PWD/Scripts/mail
-            ;;
+            ;;&
         "All"|"Password")
             ln -vsf $PWD/password ~/.config/
-            ;;
+            ;;&
         "All"|"PIP")
             sh $PWD/Scripts/pip
             ;;
