@@ -1,0 +1,13 @@
+#!/bin/sh
+###############################################################
+## AUTHOR Name: Boyang Yan                                   ##
+## KEYWORDs: Git setup                                       ##
+## PURPOSE: Set-up Git                                       ##
+## ENVIRONment: mac, Linux                                   ##
+## COMMENTs:                                                 ##
+## Last Modified Date: 29.11.2021                            ##
+###############################################################
+
+git config --global user.email "yanboyang713@gmail.com"
+git config --global user.name "Boyang Yan"
+
