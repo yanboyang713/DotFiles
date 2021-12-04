@@ -34,7 +34,9 @@ execs:
 install: ## Install arch linux packages
 	$(PKGINSTALL) --needed - < $(BASE)/ArchLinux/pacmanlist
 	sudo pkgfile --update
+
 aur: ## Install arch linux AUR packages using yay
 	yay -S --needed - < $(BASE)/ArchLinux/aurlist
+
 backup: ## Backup arch linux packages
 	$(BASE)/Scripts/backupPackage
