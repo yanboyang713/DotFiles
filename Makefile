@@ -30,6 +30,7 @@ execs:
 	$(MKDIR) $(HOME)/.local/bin/
 	$(LN) $(PWD)/Scripts/welcomemessage $(HOME)/.local/bin/welcomemessage
 	$(LN) $(PWD)/profile/.xprofile $(HOME)/.xprofile
+	$(LN) $(PWD)/sound/.asoundrc $(HOME)/.asoundrc
 
 install: ## Install arch linux packages
 	$(PKGINSTALL) --needed - < $(BASE)/ArchLinux/pacmanlist

@@ -16,7 +16,7 @@ sudo systemctl start ovs-vswitchd
 sleep 2
 
 echo "Add IP address to OVS bridge"
-sudo ip addr add 192.168.1.1/24 dev br0
+sudo ip addr add 192.168.11.253/24 dev br0
 
 echo "Set-up NAT"
 sudo sh ./nat
