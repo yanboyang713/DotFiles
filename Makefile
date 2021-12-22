@@ -25,12 +25,20 @@ help:
 
 init: ## deploy dotfiles
 	$(BASE)/Scripts/init
+	$(SLN) $(PWD)/profile/profile /etc/profile
 
 execs:
 	$(MKDIR) $(HOME)/.local/bin/
 	$(LN) $(PWD)/Scripts/welcomemessage $(HOME)/.local/bin/welcomemessage
 	$(LN) $(PWD)/profile/.xprofile $(HOME)/.xprofile
 	$(LN) $(PWD)/sound/.asoundrc $(HOME)/.asoundrc
+	$(LN) $(PWD)/dwmblocks/sb-clock $(HOME)/.local/bin/sb-clock
+	$(LN) $(PWD)/dwmblocks/sb-battery $(HOME)/.local/bin/sb-battery
+	$(LN) $(PWD)/dwmblocks/sb-cpu $(HOME)/.local/bin/sb-cpu
+	$(LN) $(PWD)/dwmblocks/sb-memory $(HOME)/.local/bin/sb-memory
+	$(LN) $(PWD)/dwmblocks/sb-volume $(HOME)/.local/bin/sb-volume
+	$(LN) $(PWD)/dwmblocks/sb-internet $(HOME)/.local/bin/sb-internet
+	$(SLN) $(PWD)/dwmblocks/sb-cpu /usr/local/bin/sb-cpu
 
 install: ## Install arch linux packages
 	$(PKGINSTALL) --needed - < $(BASE)/ArchLinux/pacmanlist

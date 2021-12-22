@@ -10,6 +10,7 @@
 echo "Start Set-up ZSH"
 ln -vsf $PWD/zsh/.zshrc ~/.zshrc
 ln -vsf $PWD/zsh/zsh ~/.config/
+#ln -vsf $PWD/zsh/ ~/.config/
 echo "Set ZSH as default shell"
 chsh -s /usr/bin/zsh
 
