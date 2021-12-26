@@ -14,3 +14,5 @@ source "$HOME/.config/zsh/.zshrc"
 
 # Run welcome message
 welcomemessage
+
+if [ -e /home/yanboyang713/.nix-profile/etc/profile.d/nix.sh ]; then . /home/yanboyang713/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
