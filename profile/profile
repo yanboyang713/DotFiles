@@ -51,6 +51,20 @@ unset TERMCAP
 
 # Man is much better than us at figuring this out
 unset MANPATH
+export EDITOR=/usr/bin/vim
+export BROWSER=/usr/bin/google-chrome-stable
+
+# fcitx input method
+# https://www.yanboyang.com/chineseinputmethod/
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+
+fcitx &
+
+# Don't use home manager to manage shell configuration
+. "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
+
 #EDITOR=nvim
 
 # Set sudo-askpass program
@@ -86,3 +100,6 @@ unset MANPATH
 #export WEECHAT_HOME="$XDG_CONFIG_HOME/weechat"
 #export LESSHISTFILE=" "
 #export TERMINAL="st"
+
+# Nix
+export NIXPKGS_ALLOW_UNFREE=1

@@ -62,6 +62,10 @@ alias doomP="$HOME/.emacs.d/bin/doom purge"
 alias doomC="$HOME/.emacs.d/bin/doom clean"
 alias doomB="$HOME/.emacs.d/bin/doom build"
 
+# xclip
+alias setclip="xclip -selection c"
+alias getclip="xclip -selection c -o"
+
 # Blog
 alias blogD="sh $HOME/blog/deploy.sh"
 

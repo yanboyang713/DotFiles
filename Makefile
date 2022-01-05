@@ -39,6 +39,7 @@ execs:
 	$(LN) $(PWD)/dwmblocks/sb-volume $(HOME)/.local/bin/sb-volume
 	$(LN) $(PWD)/dwmblocks/sb-internet $(HOME)/.local/bin/sb-internet
 	$(SLN) $(PWD)/dwmblocks/sb-cpu /usr/local/bin/sb-cpu
+	$(LN) $(PWD)/Scripts/screenshot $(HOME)/.local/bin/screenshot
 
 install: ## Install arch linux packages
 	$(PKGINSTALL) --needed - < $(BASE)/ArchLinux/pacmanlist
