@@ -1,0 +1,33 @@
+#!/bin/bash
+###############################################################
+## AUTHOR Name: Boyang Yan                                   ##
+## KEYWORDs: cloudinary, upload, screenshot                  ##
+## PURPOSE: This program for take a screenshot and           ##
+## upload to cloudinary                                      ##
+## ENVIRONment: mac, Linux                                   ##
+## COMMENTs:                                                 ##
+## Last Modified Date: 05.01.2022                            ##
+###############################################################
+
+# Using scrot take a screenshot
+fileName="$(date +'%Y-%m-%d-%H-%M-%S')-screenshot.png"
+echo $fileName
+scrot -s /tmp/$fileName
+
+# Upload screenshot to cloudinary
+export CLOUDINARY_URL=cloudinary://812134614995175:peTDZeQMd6IlCvr4-dLm5Xc0qBM@dkvj6mo4c
+json=$(cld uploader upload "/tmp/$fileName" folder="screenshot" tags="screenshot" 2>&1)
+
+# Save return json file to tmp dir
+echo $json > /tmp/json.json
+
+# Get image URL
+url=$(jq -r '.url' /tmp/json.json)
+
+# free files
+rm -rf /tmp/json.json
+rm -rf /tmp/$fileName
+
+# Write URL to clipboard
+echo $url
+echo $url | xclip -selection c
