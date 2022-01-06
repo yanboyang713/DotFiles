@@ -51,7 +51,6 @@ unset TERMCAP
 
 # Man is much better than us at figuring this out
 unset MANPATH
-export EDITOR=/usr/bin/vim
 export BROWSER=/usr/bin/google-chrome-stable
 
 # fcitx input method
@@ -65,7 +64,8 @@ fcitx &
 # Don't use home manager to manage shell configuration
 . "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
 
-#EDITOR=nvim
+EDITOR=nvim
+VISUAL=nvim
 
 # Set sudo-askpass program
 #export SUDO_ASKPASS="$HOME/.local/bin/dmenupass"
