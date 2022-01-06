@@ -17,7 +17,7 @@ SLN = "sudo ln -vsf"
 LNDIR = "ln -vs"
 
 PS3='Please enter your choice: '
-options=("All" "ZSH" "Doom Emacs" "Nerd Fonts" "Blog" "NPM" "Mail" "Password" "PIP" "GIT" "PICOM" "Quit")
+options=("All" "ZSH" "Doom Emacs" "Nerd Fonts" "Blog" "NPM" "Mail" "Password" "PIP" "GIT" "PICOM" "NVIM" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -54,6 +54,10 @@ do
     	"ALL"|"PICOM")
 	    mkdir $HOME/.config/picom/
 	    ln -vsf $PWD/picom/picom.conf $HOME/.config/picom/picom.conf
+	    ;;&
+	"ALL"|"NVIM")
+	    mkdir $HOME/.config/nvim/
+	    ln -vsf $PWD/nvim/init.vim $HOME/.config/nvim/init.vim
 	    ;;
         "Quit")
             break

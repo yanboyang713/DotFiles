@@ -40,6 +40,7 @@ execs:
 	$(LN) $(PWD)/dwmblocks/sb-internet $(HOME)/.local/bin/sb-internet
 	$(SLN) $(PWD)/dwmblocks/sb-cpu /usr/local/bin/sb-cpu
 	$(LN) $(PWD)/Scripts/screenshot $(HOME)/.local/bin/screenshot
+	$(LN) $(PWD)/alacritty/alacritty.yml $(HOME)/.alacritty.yml
 
 install: ## Install arch linux packages
 	$(PKGINSTALL) --needed - < $(BASE)/ArchLinux/pacmanlist
