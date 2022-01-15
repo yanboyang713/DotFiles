@@ -1,0 +1,14 @@
+#!/bin/bash
+# Bash Menu Script
+###############################################################
+## AUTHOR Name: Boyang Yan                                   ##
+## KEYWORDs: Init set-up DWM                                 ##
+## PURPOSE: Init Set-up DWM                                  ##
+## ENVIRONment: mac, Linux                                   ##
+## COMMENTs:                                                 ##
+## Last Modified Date: 12.01.2022                            ##
+###############################################################
+
+echo "Let's we start init set-up our DWM"
+
+ln -vsf ./startdwm ~/.local/bin/startdwm

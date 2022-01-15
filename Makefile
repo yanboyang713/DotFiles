@@ -30,7 +30,8 @@ init: ## deploy dotfiles
 execs:
 	$(MKDIR) $(HOME)/.local/bin/
 	$(LN) $(PWD)/Scripts/welcomemessage $(HOME)/.local/bin/welcomemessage
-	$(LN) $(PWD)/profile/.xprofile $(HOME)/.xprofile
+	$(LN) $(PWD)/xorg/.xprofile $(HOME)/.xprofile
+	$(LN) $(PWD)/xorg/.xinitrc $(HOME)/.xinitrc
 	$(LN) $(PWD)/sound/.asoundrc $(HOME)/.asoundrc
 	$(LN) $(PWD)/dwmblocks/sb-clock $(HOME)/.local/bin/sb-clock
 	$(LN) $(PWD)/dwmblocks/sb-battery $(HOME)/.local/bin/sb-battery
