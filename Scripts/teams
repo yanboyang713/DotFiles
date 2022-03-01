@@ -1,0 +1,23 @@
+#!/bin/sh                                                      
+###############################################################
+## AUTHOR Name: Boyang Yan                                   ##
+## KEYWORDs: Teams setup with --no-sandbox                   ##
+## PURPOSE:  Teams setup with --no-sandbox                   ##
+## ENVIRONment: mac, Linux                                   ##
+## COMMENTs:                                                 ##
+## Last Modified Date: 03.01.2022                            ##
+###############################################################
+
+## Make sure sync the time on your computer first
+sudo systemctl enable systemd-timesyncd.service
+timedatectl set-ntp true
+
+mkdir -p "${XDG_DATA_HOME:-$HOME/.local/share}/applications"
+cp -a "/usr/share/applications/teams.desktop" \
+  "${XDG_DATA_HOME:-$HOME/.local/share}/applications/teams.desktop"
+sed -i -e 's,teams %U,teams --no-sandbox %U,' \
+  "${XDG_DATA_HOME:-$HOME/.local/share}/applications/teams.desktop"
+
+mv /usr/share/applications/teams.desktop /usr/share/applications/teams.desktop.old
+
+echo "DONE Set-up MS-Teams"

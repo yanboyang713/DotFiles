@@ -53,5 +53,9 @@ emacs: ## Install Emacs with dependents
 	sudo pkgfile --update
 	yay -S --needed - < $(BASE)/ArchLinux/emacs/emacsAurlist
 
+python: ## Install Python
+	sudo pkgfile --update
+	yay -S --needed - < $(BASE)/ArchLinux/python/pythonAurlist
+	
 backup: ## Backup arch linux packages
 	$(BASE)/Scripts/backupPackage
