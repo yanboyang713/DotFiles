@@ -10,20 +10,20 @@
 echo "Backup Packages called"
 
 backup () {
-    fileNameAUR="./ArchLinux/AURBackupedOn$(date +'%Y-%m-%d%H:%M:%S')"
-    fileNamePacman="./ArchLinux/PacmanBackupedOn$(date +'%Y-%m-%d%H:%M:%S')"
+    fileNameAUR="./ArchLinux/backup/AURBackupedOn$(date +'%Y-%m-%d%H:%M:%S')"
+    fileNamePacman="./ArchLinux/backup/PacmanBackupedOn$(date +'%Y-%m-%d%H:%M:%S')"
 
     pacman -Qnq > $fileNamePacman
     pacman -Qqem > $fileNameAUR
 
     echo "Backup DONE"
 }
-if [ "$(ls -A ./ArchLinux 2>/dev/null)" ]; then
+if [ "$(ls -A ./ArchLinux/backup 2>/dev/null)" ]; then
     echo "ArchLinux DIR found, start backup"
     backup
 else
     echo "Create a new DIR and backup"
-    mkdir ./ArchLinux
+    mkdir ./ArchLinux/backup
     backup
 fi;
 

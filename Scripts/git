@@ -11,3 +11,51 @@
 git config --global user.email "yanboyang713@gmail.com"
 git config --global user.name "Boyang Yan"
 
+
+
+initSSHkey () {
+    echo "***** App .ssh directory is empty, initialising ssh key and configuring known_hosts for common git repositories (github/gitlab) *****"
+    rm -rf ~/.ssh/*
+    ssh-keygen -t rsa -f ~/.ssh/id_rsa -q -P ""
+    ssh-keyscan github.com > ~/.ssh/known_hosts 2>/dev/null
+    ssh-keyscan gitlab.com >> ~/.ssh/known_hosts 2>/dev/null
+
+    echo "Init SSH key Done!!!"
+}
+
+testConnection () {
+    # Testing Github connection success or not
+    testConnection=$(ssh -o ConnectTimeout=10 -T -p 443 git@ssh.github.com 2>&1)
+
+    # success connect to Github
+    if [[ $testConnection =~ successfully ]]; then
+        echo "***** You can connect to Github successfully **********"
+        deploy "$testConnection"
+    else
+        echo "***** Could NOT connect to Github!!! Please, update your Github SSH keys *******"
+        echo "***** You can add the below public key as your deploy key *****"
+        cat ~/.ssh/id_rsa.pub
+
+        read -p "Are you done update your deploy key (Y/n)? " -n 1 -r
+        echo    # (optional) move to a new line
+        if [[ $REPLY =~ ^[Yy]$ ]]; then
+            testConnection=$(ssh -o ConnectTimeout=10 -T -p 443 git@ssh.github.com 2>&1)
+            if [[ $testConnection =~ successfully ]]; then
+                echo "You can use SSH key connect to GitHub successfully !!!"
+            else
+                echo "You could NOT use SSH key connect to GitHub, Please wait a few minutes, and try again !!!"
+            fi
+        fi
+    fi
+}
+
+# Have ssh key
+if [ "$(ls -A ~/.ssh/id_rsa.pub 2>/dev/null)" ]; then
+    echo "***** .ssh directory exists and has content, continuing *****";
+    testConnection
+# Have NOT ssh key
+else
+    initSSHkey
+    testConnection
+
+fi;

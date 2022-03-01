@@ -43,12 +43,15 @@ execs:
 	$(LN) $(PWD)/Scripts/screenshot $(HOME)/.local/bin/screenshot
 	$(LN) $(PWD)/alacritty/alacritty.yml $(HOME)/.alacritty.yml
 
-install: ## Install arch linux packages
-	$(PKGINSTALL) --needed - < $(BASE)/ArchLinux/pacmanlist
+base: ## Install Arch Linux base packages
+	$(PKGINSTALL) --needed - < $(BASE)/ArchLinux/base/basePacmanList
 	sudo pkgfile --update
+	yay -S --needed - < $(BASE)/ArchLinux/base/baseAurList
 
-aur: ## Install arch linux AUR packages using yay
-	yay -S --needed - < $(BASE)/ArchLinux/aurlist
+emacs: ## Install Emacs with dependents
+	$(PKGINSTALL) --needed - < $(BASE)/ArchLinux/emacs/emacsPacmanlist
+	sudo pkgfile --update
+	yay -S --needed - < $(BASE)/ArchLinux/emacs/emacsAurlist
 
 backup: ## Backup arch linux packages
 	$(BASE)/Scripts/backupPackage

@@ -62,7 +62,7 @@ export XMODIFIERS=@im=fcitx
 fcitx &
 
 # Don't use home manager to manage shell configuration
-. "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
+#. "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
 
 EDITOR=nvim
 VISUAL=nvim
