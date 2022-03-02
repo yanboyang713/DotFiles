@@ -36,7 +36,7 @@ testConnection () {
         echo "***** You can add the below public key as your GitHub Account SSH key *****"
         cat ~/.ssh/id_rsa.pub
 
-        read -p "Are you done update your deploy key (Y/n)? " -n 1 -r
+        read -p "Are you done update your GitHub SSH key (Y/n)? " -n 1 -r
         echo    # (optional) move to a new line
         if [[ $REPLY =~ ^[Yy]$ ]]; then
             testConnection=$(ssh -o ConnectTimeout=10 -T -p 443 git@ssh.github.com 2>&1)
@@ -59,3 +59,9 @@ else
     testConnection
 
 fi;
+
+## Enabling SSH connections over HTTPS
+## https://docs.github.com/en/authentication/troubleshooting-ssh/using-ssh-over-the-https-port#enabling-ssh-connections-over-https
+
+echo "append text to ssh config !!!"
+echo -ne "\nHost github.com\nHostname ssh.github.com\nPort 443\nUser git\n"  | tee -a ~/.ssh/config
