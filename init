@@ -8,6 +8,8 @@
 ## Last Modified Date: 25.09.2021                            ##
 ###############################################################
 
+## pull latest of all git submodules
+git submodule update --recursive --remote
 ## Install System packages
 make basePackages
 make pythonPackages
