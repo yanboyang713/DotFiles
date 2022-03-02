@@ -56,8 +56,7 @@ do
 	    ln -vsf $PWD/picom/picom.conf $HOME/.config/picom/picom.conf
 	    ;;&
 	"ALL"|"NVIM")
-	    mkdir $HOME/.config/nvim/
-	    ln -vsf $PWD/nvim/init.vim $HOME/.config/nvim/init.vim
+            sh $PWD/Scripts/nvim
 	    ;;&
 	"ALL"|"TEAMS")
 	    sh $PWD/Scripts/teams

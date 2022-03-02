@@ -1,0 +1,37 @@
+#!/bin/bash
+# Bash Menu Script
+###############################################################
+## AUTHOR Name: Boyang Yan                                   ##
+## KEYWORDs: Init set-up NVIM                                ##
+## PURPOSE: Init Set-up NVIM                                 ##
+## ENVIRONment: mac, Linux                                   ##
+## COMMENTs:                                                 ##
+## Last Modified Date: 03.02.2022                            ##
+###############################################################
+
+echo "Let's we start set-up NVIM"
+
+## Details at https://www.yanboyang.com/neovim/
+
+## Pre-requised Install
+sudo pkgfile --update
+sudo pacman --noconfirm -S --needed nodejs neovim
+
+## Install the Vim-plug Plugin Manager
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+	https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+## Import Existing NeoVim Configuration
+mkdir $HOME/.config/nvim/
+ln -vsf $PWD/nvim/init.vim $HOME/.config/nvim/init.vim
+
+## Install NeoVim Plugins
+nvim --headless +'PlugInstall --sync' +'UpdateRemotePlugins' +qall
+
+## Install coc.nvim Plugged
+npm -g list yarn || sudo npm install -g yarn
+
+# Go to your coc.nvim plugged DIR
+cd ~/.config/nvim/plugged/coc.nvim
+yarn install
+yarn build
