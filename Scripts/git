@@ -30,10 +30,10 @@ testConnection () {
     # success connect to Github
     if [[ $testConnection =~ successfully ]]; then
         echo "***** You can connect to Github successfully **********"
-        deploy "$testConnection"
+        echo "You can connect to GitHub successfully !!!"
     else
         echo "***** Could NOT connect to Github!!! Please, update your Github SSH keys *******"
-        echo "***** You can add the below public key as your deploy key *****"
+        echo "***** You can add the below public key as your GitHub Account SSH key *****"
         cat ~/.ssh/id_rsa.pub
 
         read -p "Are you done update your deploy key (Y/n)? " -n 1 -r
