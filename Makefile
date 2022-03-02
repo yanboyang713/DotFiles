@@ -43,19 +43,28 @@ execs:
 	$(LN) $(PWD)/Scripts/screenshot $(HOME)/.local/bin/screenshot
 	$(LN) $(PWD)/alacritty/alacritty.yml $(HOME)/.alacritty.yml
 
-base: ## Install Arch Linux base packages
+basePackages: ## Install Arch Linux base packages
 	$(PKGINSTALL) --needed - < $(BASE)/ArchLinux/base/basePacmanList
 	sudo pkgfile --update
 	yay -S --needed - < $(BASE)/ArchLinux/base/baseAurList
 
-emacs: ## Install Emacs with dependents
+emacsPackages: ## Install Emacs with dependents
 	$(PKGINSTALL) --needed - < $(BASE)/ArchLinux/emacs/emacsPacmanlist
 	sudo pkgfile --update
 	yay -S --needed - < $(BASE)/ArchLinux/emacs/emacsAurlist
 
-python: ## Install Python
+pythonPackages: ## Install Python
 	sudo pkgfile --update
 	yay -S --needed - < $(BASE)/ArchLinux/python/pythonAurlist
 	
-backup: ## Backup arch linux packages
+multimediaPackages: ## Install multimedia Packages
+	$(PKGINSTALL) --needed - < $(BASE)/ArchLinux/multimedia/pacmanList
+	sudo pkgfile --update
+	yay -S --needed - < $(BASE)/ArchLinux/multimedia/aurList
+
+cloudVirtualPackages: ## Install cloud and virtual environment related packages
+	$(PKGINSTALL) --needed - < $(BASE)/ArchLinux/cloudVirtual/pacmanList
+	sudo pkgfile --update
+
+backupPackages: ## Backup arch linux packages
 	$(BASE)/Scripts/backupPackage

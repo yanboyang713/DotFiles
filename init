@@ -1,0 +1,16 @@
+#!/bin/bash
+###############################################################
+## AUTHOR Name: Boyang Yan                                   ##
+## KEYWORDs: Start-up all of system set-up                   ##
+## PURPOSE: Management package and Dot configureation        ##
+## ENVIRONment: mac, Linux                                   ##
+## COMMENTs:                                                 ##
+## Last Modified Date: 25.09.2021                            ##
+###############################################################
+
+## Install System packages
+make basePackages
+make pythonPackages
+make emacspackages
+make multimediaPackages
+make cloudVirtualPackages
