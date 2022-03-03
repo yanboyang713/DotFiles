@@ -1,0 +1,17 @@
+#!/bin/sh
+###############################################################
+## AUTHOR Name: Boyang Yan                                   ##
+## KEYWORDs: Keyboard, Modification                          ##
+## PURPOSE: ctrl and caps exchange                           ##
+## ENVIRONment: mac, Linux                                   ##
+## COMMENTs:                                                 ##
+## Last Modified Date: 03.03.2022                            ##
+###############################################################
+
+read -p "Do you want to swap ctrl-L and Caps keys (Y/n)? " -n 1 -r
+        echo    # (optional) move to a new line
+        if [[ $REPLY =~ ^[Yy]$ ]]; then
+            ## swap ctrl-L and Caps when star-up
+            echo "Swap ctrl-L and Caps when start-up !!!"
+            echo -ne "\n#Swap ctrl-L and Caps when start-up\nsetxkbmap -option \"ctrl:swapcaps\"\n\n"  | tee -a ~/DotFiles/profile/profile        fi
+        fi

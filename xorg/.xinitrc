@@ -66,3 +66,5 @@ get_session(){
 exec $(get_session "$1")
 
 dwmstatus 2>&1 >/dev/null &
+
+
