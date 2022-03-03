@@ -1,0 +1,41 @@
+#!/bin/sh
+###############################################################
+## AUTHOR Name: Boyang Yan                                   ##
+## KEYWORDs: Python, conda, miniconda                        ##
+## PURPOSE: Install and set-up miniconda to Arch Linux       ##
+## ENVIRONment: mac, Linux                                   ##
+## COMMENTs:                                                 ##
+## Last Modified Date: 03.03.2022                            ##
+###############################################################
+
+yay -S --needed miniconda3
+
+read -p "You can enable conda only for the current user(1) or for all users(2), please choose 1 or 2 !!!" -n 1 -r
+        echo    # (optional) move to a new line
+        if [[ $REPLY =~ ^[1]$ ]]; then
+            echo "[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh" >> ~/.bashrc
+        elif [[ $REPLY =~ ^[2]$ ]]; then
+            sudo ln -s /opt/miniconda3/etc/profile.d/conda.sh /etc/profile.d/conda.sh
+        else
+            echo "incorrent option !!!"
+            echo
+        fi
+
+read -p "Which shells are you currently in used? bash (1), fish (2), tcsh (3), xonsh (4), zsh (5), powershell (6), please choose 1, 2, 3, 4, 5, 6 !!!" -n 1 -r
+        echo    # (optional) move to a new line
+        if [[ $REPLY =~ ^[1]$ ]]; then
+            conda init bash
+        elif [[ $REPLY =~ ^[2]$ ]]; then
+            conda init fish
+        elif [[ $REPLY =~ ^[3]$ ]]; then
+            conda init tcsh
+        elif [[ $REPLY =~ ^[4]$ ]]; then
+            conda init xonsh
+        elif [[ $REPLY =~ ^[5]$ ]]; then
+            conda init zsh
+        elif [[ $REPLY =~ ^[6]$ ]]; then
+            conda init powershell
+        else
+            echo "incorrent option !!!"
+            echo
+        fi
