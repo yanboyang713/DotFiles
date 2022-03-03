@@ -3,3 +3,8 @@ ripgrep
 fd
 shellcheck
 libvterm
+libvoikko
+hspell
+nuspell
+hunspell
+aspell

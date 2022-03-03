@@ -104,3 +104,6 @@ export TERMINAL="alacritty"
 
 # Nix
 export NIXPKGS_ALLOW_UNFREE=1
+
+# Blog
+export BLOGREPOSITORIENAME="yanboyang713/yanboyang713.github.io"
