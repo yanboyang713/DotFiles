@@ -13,5 +13,5 @@ read -p "Do you want to swap ctrl-L and Caps keys (Y/n)? " -n 1 -r
         if [[ $REPLY =~ ^[Yy]$ ]]; then
             ## swap ctrl-L and Caps when star-up
             echo "Swap ctrl-L and Caps when start-up !!!"
-            echo -ne "\n#Swap ctrl-L and Caps when start-up\nsetxkbmap -option \"ctrl:swapcaps\"\n\n"  | tee -a ~/DotFiles/profile/profile        fi
+            echo -ne "\n#Swap ctrl-L and Caps when start-up\nsetxkbmap -option \"ctrl:swapcaps\"\n\n"  | tee -a ~/DotFiles/profile/profile
         fi
