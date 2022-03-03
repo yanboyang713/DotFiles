@@ -1,0 +1,43 @@
+#!/bin/sh
+###############################################################
+## AUTHOR Name: Boyang Yan                                   ##
+## KEYWORDs: docker                                          ##
+## PURPOSE: Install and set-up docker on Arch Linux          ##
+## ENVIRONment: mac, Linux                                   ##
+## COMMENTs:                                                 ##
+## Last Modified Date: 03.03.2022                            ##
+###############################################################
+
+## Install docker
+sudo pkgfile --update
+sudo pacman --noconfirm -S --needed docker
+
+## Enable Docker when boot
+sudo systemctl start docker
+sudo systemctl enable docker
+
+## Executing the Docker Command Without Sudo
+
+### Create the docker group
+sudo groupadd docker
+
+### Test USER set-up correct
+testUser=$(id -nG 2>&1)
+echo $testUser
+if [[ $testUser == *"docker"* ]]; then
+    echo "User Set-up correct !"
+else
+    # Add your user to the docker group
+    sudo usermod -aG docker ${USER}
+
+    # apply the new group membership
+    su - ${USER}
+fi
+
+## Check Docker run correct
+checkDocker=$(docker run hello-world 2>&1)
+if [[ $checkDocker == *"working correctly"* ]]; then
+    echo "Docker can run without sudo successfully !!!"
+else
+    echo "Docker fail to run"
+fi
