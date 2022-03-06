@@ -42,6 +42,7 @@ execs:
 	$(SLN) $(PWD)/dwmblocks/sb-cpu /usr/local/bin/sb-cpu
 	$(LN) $(PWD)/Scripts/screenshot $(HOME)/.local/bin/screenshot
 	$(LN) $(PWD)/alacritty/alacritty.yml $(HOME)/.alacritty.yml
+	$(SLN) $(PWD)/pacman/pacman.conf /etc/pacman.conf
 
 basePackages: ## Install Arch Linux base packages
 	$(PKGINSTALL) --needed - < $(BASE)/ArchLinux/base/basePacmanList
