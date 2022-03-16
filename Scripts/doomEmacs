@@ -9,7 +9,7 @@
 ###############################################################
 echo "Start Set-up Doom Emacs"
 rm -rf ~/.emacs.d
-git clone https://github.com/hlissner/doom-emacs ~/.emacs.d
+git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
 ln -vsf $PWD/doom ~/.config/doom
 cd ~/.emacs.d
 git checkout develop

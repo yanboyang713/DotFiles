@@ -1,0 +1,13 @@
+#!/bin/sh
+###############################################################
+## AUTHOR Name: Boyang Yan                                   ##
+## KEYWORDs: docker                                          ##
+## PURPOSE: Install and set-up docker on Arch Linux          ##
+## ENVIRONment: mac, Linux                                   ##
+## COMMENTs:                                                 ##
+## Last Modified Date: 03.03.2022                            ##
+###############################################################
+
+homeDIR="/home/$USER"
+
+docker run --rm -e DISABLE_AUTH=true -v "$homeDIR":/home/rstudio/ -p 8787:8787 rocker/verse &
