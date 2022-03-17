@@ -10,4 +10,4 @@
 
 homeDIR="/home/$USER"
 
-docker run --rm -e DISABLE_AUTH=true -v "$homeDIR":/home/rstudio/ -p 8787:8787 rocker/verse &
+docker run --rm -e DISABLE_AUTH=true -v "$homeDIR":/home/rstudio/ -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY -p 8787:8787 rocker/verse
