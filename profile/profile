@@ -113,3 +113,4 @@ export BLOGREPOSITORIENAME="yanboyang713/yanboyang713.github.io"
 setxkbmap -option "ctrl:swapcaps"
 setxkbmap -option "caps:escape"
 
+export DISPLAY=":0.0"

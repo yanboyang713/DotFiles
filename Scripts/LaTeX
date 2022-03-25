@@ -1,0 +1,14 @@
+#!/bin/bash
+# Bash Menu Script
+#######################################################################
+## AUTHOR Name: Boyang Yan                                           ##
+## KEYWORDs: LaTeX                                                   ##
+## PURPOSE: Set-up LaTeX                                             ##
+## ENVIRONment: Linux                                                ##
+## COMMENTs:                                                         ##
+## Last Modified Date: 1.11.2021                                     ##
+#######################################################################
+
+## Install LaTeX
+sudo pkgfile --update
+sudo pacman --noconfirm -S --needed - < ~/DotFiles/ArchLinux/LaTeX/pacman

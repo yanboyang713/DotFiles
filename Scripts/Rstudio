@@ -8,6 +8,7 @@
 ## Last Modified Date: 03.03.2022                            ##
 ###############################################################
 
-homeDIR="/home/$USER"
+sudo pacman --noconfirm -S --needed - < $HOME/DotFiles/ArchLinux/R/pacmanList
+# https://unix.stackexchange.com/questions/31283/error-in-r-unable-to-open-connection-to-x11
 
-docker run --rm -e DISABLE_AUTH=true -v "$homeDIR":/home/rstudio/ -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY -p 8787:8787 rocker/verse
+docker run --rm -e DISABLE_AUTH=true -v "$HOME":/home/rstudio/ -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY -p 8787:8787 rocker/verse
