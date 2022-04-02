@@ -4,7 +4,6 @@ zsh
 git
 npm
 figlet
-picom
 alacritty
 neovim
 fcitx
@@ -14,5 +13,3 @@ fcitx-googlepinyin
 fcitx-configtool
 fcitx-im
 pkgfile
-imlib2
-xorg-xsetroot

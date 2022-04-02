@@ -28,6 +28,7 @@ do
             sh $PWD/Scripts/zshSetUp
             ;;&
         "All"|"Doom Emacs")
+            mkdir ~/org/org-roam
             sh $PWD/Scripts/doomEmacs
             ;;&
         "All"|"Nerd Fonts")

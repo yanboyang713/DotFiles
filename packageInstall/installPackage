@@ -1,0 +1,31 @@
+#!/bin/bash
+###############################################################
+## AUTHOR Name: Boyang Yan                                   ##
+## KEYWORDs: Install, package                                ##
+## PURPOSE: Install all of required package                  ##
+## ENVIRONment: mac, Linux                                   ##
+## COMMENTs:                                                 ##
+## Last Modified Date: 03.04.2022                            ##
+###############################################################
+
+PACMANINSTALL="sudo pacman --noconfirm --needed -S"
+YAYINSTALL="yay --needed --noconfirm -S"
+DIR=$(dirname "${BASH_SOURCE[0]}") 
+## Install Arch Linux base packages
+$PACMANINSTALL - < $DIR/ArchLinux/base/basePacmanList
+sudo pkgfile --update
+$YAYINSTALL - < $DIR/ArchLinux/base/baseAurList
+## Install Emacs with dependents
+$PACMANINSTALL - < $DIR/ArchLinux/emacs/emacsPacmanlist
+sudo pkgfile --update
+$YAYINSTALL - < $DIR/ArchLinux/emacs/emacsAurlist
+## Install Python
+sudo pkgfile --update
+$YAYINSTALL - < $DIR/ArchLinux/python/pythonAurlist
+## Install multimedia Packages
+$PACMANINSTALL - < $DIR/ArchLinux/multimedia/pacmanList
+sudo pkgfile --update
+$YAYINSTALL - < $DIR/ArchLinux/multimedia/aurList
+## Install cloud and virtual environment related packages
+$PACMANINSTALL - < $DIR/ArchLinux/cloudVirtual/pacmanList
+sudo pkgfile --update

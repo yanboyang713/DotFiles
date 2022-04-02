@@ -5,5 +5,5 @@
 	path = doom
 	url = git@github.com:yanboyang713/doom.git
 [submodule "chadwm"]
-	path = chadwm
+	path = metaWM
 	url = git@github.com:yanboyang713/chadwm.git

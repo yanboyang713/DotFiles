@@ -10,12 +10,13 @@
 
 ## pull latest of all git submodules
 #git submodule update --recursive --remote
-## Install System packages
-#make basePackages
-#make pythonPackages
-#make emacspackages
-#make multimediaPackages
-#make cloudVirtualPackages
+
+# Install System packages
+read -p "Do you want to check/install requied packages (Y/n)? " -n 1 -r
+echo    # (optional) move to a new line
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    source $PWD/packageInstall/installPackage
+fi
 
 #make execs
-sh ./Scripts/init
+#sh ./Scripts/init
