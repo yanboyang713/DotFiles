@@ -9,13 +9,13 @@
 ###############################################################
 
 ## pull latest of all git submodules
-git submodule update --recursive --remote
+#git submodule update --recursive --remote
 ## Install System packages
-make basePackages
-make pythonPackages
-make emacspackages
-make multimediaPackages
-make cloudVirtualPackages
+#make basePackages
+#make pythonPackages
+#make emacspackages
+#make multimediaPackages
+#make cloudVirtualPackages
 
-make execs
-make init
+#make execs
+sh ./Scripts/init

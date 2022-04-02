@@ -5,3 +5,5 @@ paccache -ruk0
 paccache -rk1
 # Unused packages
 sudo pacman -Qtdg | sudo pacman -Rns -
+# Clean journalctl logs
+sudo journalctl --vacuum-time=2d
