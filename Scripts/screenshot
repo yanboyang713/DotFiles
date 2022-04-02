@@ -18,16 +18,23 @@ scrot -s /tmp/$fileName
 export CLOUDINARY_URL=cloudinary://812134614995175:peTDZeQMd6IlCvr4-dLm5Xc0qBM@dkvj6mo4c
 json=$(cld uploader upload "/tmp/$fileName" folder="screenshot" tags="screenshot" 2>&1)
 
-# Save return json file to tmp dir
-echo $json > /tmp/json.json
+# cld install or not
+if [[ $json =~ "cld: command not found" ]]; then
+        echo "***** You have NOT install cloudinary-cli **********"
+        echo "Installing cloudinary-cli"
+        pip install cloudinary-cli
+else
+    # Save return json file to tmp dir
+    echo $json > /tmp/json.json
 
-# Get image URL
-url=$(jq -r '.url' /tmp/json.json)
+    # Get image URL
+    url=$(jq -r '.url' /tmp/json.json)
 
-# free files
-rm -rf /tmp/json.json
-rm -rf /tmp/$fileName
+    # free files
+    rm -rf /tmp/json.json
+    rm -rf /tmp/$fileName
 
-# Write URL to clipboard
-echo $url
-echo $url | xclip -selection c
+    # Write URL to clipboard
+    echo $url
+    echo $url | xclip -selection c
+fi

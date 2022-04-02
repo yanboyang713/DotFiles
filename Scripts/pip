@@ -13,3 +13,4 @@ echo "Let's we install all of required PIP's package for our system"
 
 pip install isort
 pip install pipenv
+pip install cloudinary-cli
