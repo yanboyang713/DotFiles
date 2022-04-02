@@ -16,3 +16,6 @@ make pythonPackages
 make emacspackages
 make multimediaPackages
 make cloudVirtualPackages
+
+make execs
+make init

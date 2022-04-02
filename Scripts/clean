@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Clean package cache
+paccache -ruk0
+paccache -rk1
+# Unused packages
+sudo pacman -Qtdg | sudo pacman -Rns -

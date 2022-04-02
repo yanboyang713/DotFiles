@@ -10,9 +10,9 @@
 echo "Start Set-up Nerd Fonts"
 if [[ "$OSTYPE" == "linux-gnu"* ]] || [[ "$OSTYPE" == "darwin"* ]]; then
    sudo git config --system core.longpaths true
-   git clone --branch 2.1.0 https://github.com/ryanoasis/nerd-fonts.git ~/nerdFonts
+   git clone --branch 2.1.0 https://github.com/ryanoasis/nerd-fonts.git /tmp/nerdFonts
    cd ~/nerdFonts
    ./install.sh
-   rm -rf ~/nerdFonts
+   rm -rf /tmp/nerdFonts
 fi
 echo "Set-up Nerd Font Done"
