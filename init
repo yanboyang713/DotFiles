@@ -18,5 +18,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     source $PWD/packageInstall/installPackage
 fi
 
+# Set-up Meta WM
+source $PWD/metaWM/setupWM $PWD
 #make execs
 #sh ./Scripts/init
