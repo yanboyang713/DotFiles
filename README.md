@@ -1,5 +1,8 @@
 # Overview
-
+# git clone with submodules
+```bash
+git clone --recurse-submodules git@github.com:yanboyang713/DotFiles.git
+```
 # Git Push include submodulediles
 ```bash
 $ cd your_submodule

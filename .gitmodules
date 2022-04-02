@@ -4,3 +4,6 @@
 [submodule "doom"]
 	path = doom
 	url = git@github.com:yanboyang713/doom.git
+[submodule "chadwm"]
+	path = chadwm
+	url = git@github.com:yanboyang713/chadwm.git
