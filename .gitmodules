@@ -4,3 +4,6 @@
 [submodule "chadwm"]
 	path = metaWM
 	url = git@github.com:yanboyang713/chadwm.git
+[submodule "blog"]
+	path = blog
+	url = git@github.com:yanboyang713/yanboyang713.github.io.git
