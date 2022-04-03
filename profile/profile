@@ -100,15 +100,10 @@ export XDG_CONFIG_DIRS="/etc/xdg"
 #export SCREENRC="$XDG_CONFIG_HOME/screen/screenrc"
 #export WEECHAT_HOME="$XDG_CONFIG_HOME/weechat"
 #export LESSHISTFILE=" "
-#export TERMINAL="st"
 export TERMINAL="alacritty"
 
 # Nix
 export NIXPKGS_ALLOW_UNFREE=1
-
-# Blog
-export BLOGREPOSITORIENAME="yanboyang713/yanboyang713.github.io"
-
 
 #Swap ctrl-L and Caps when start-up
 setxkbmap -option "ctrl:swapcaps"
