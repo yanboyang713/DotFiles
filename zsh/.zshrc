@@ -12,7 +12,10 @@
 export ZDOTDIR=$HOME/.config/zsh
 source "$HOME/.config/zsh/.zshrc"
 
+# Rust set-up
+source $HOME/.cargo/env
+
 # Run welcome message
-welcomemessage
+#welcomemessage
 
 if [ -e /home/yanboyang713/.nix-profile/etc/profile.d/nix.sh ]; then . /home/yanboyang713/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

@@ -1,0 +1,17 @@
+#!/bin/bash
+# Bash Menu Script
+###############################################################
+## AUTHOR Name: Boyang Yan                                   ##
+## KEYWORDs: Set-up Rust                                     ##
+## PURPOSE: Set-up Rust                                      ##
+## ENVIRONment: mac, Linux                                   ##
+## COMMENTs:                                                 ##
+## Last Modified Date: 04.04.2022                            ##
+###############################################################
+
+# pre-required: ZSH with Boyang config
+# install Rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+# update
+

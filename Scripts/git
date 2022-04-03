@@ -64,4 +64,5 @@ fi;
 ## https://docs.github.com/en/authentication/troubleshooting-ssh/using-ssh-over-the-https-port#enabling-ssh-connections-over-https
 
 echo "append text to ssh config !!!"
+echo -ne "\nHost *\nServerAliveInterval 60\nServerAliveCountMax 30\n"  | tee -a ~/.ssh/config
 echo -ne "\nHost github.com\nHostname ssh.github.com\nPort 443\nUser git\n"  | tee -a ~/.ssh/config
