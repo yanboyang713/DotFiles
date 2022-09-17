@@ -17,7 +17,7 @@ SLN = "sudo ln -vsf"
 LNDIR = "ln -vs"
 
 PS3='Please enter your choice: '
-options=("All" "ZSH" "Doom Emacs" "Nerd Fonts" "Blog" "NPM" "Mail" "Password" "PIP" "GIT" "PICOM" "NVIM" "TEAMS" "Quit")
+options=("All" "ZSH" "Doom Emacs" "Nerd Fonts" "Blog" "NPM" "Mail" "Password" "PIP" "GIT" "PICOM" "NVIM" "TEAMS" "WM" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -61,7 +61,10 @@ do
 	    ;;&
 	"ALL"|"TEAMS")
 	    sh $PWD/Scripts/teams
-	    ;;
+	    ;;&
+	"ALL"|"WM")
+	    sh $PWD/../metaWM/setupWM
+	    ;;&
         "Quit")
             break
             ;;
